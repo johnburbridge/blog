@@ -5,7 +5,7 @@
 </h1>
 <ul>
     @foreach($posts as $post)
-        <li>{{ $post }}</li>
+        <li><a href="posts/{{ $post->id }}">{{ $post }}</a></li>
     @endforeach
 </ul>
 </body>
