@@ -17,14 +17,18 @@ Route::get('/', function () {
 
 
 Route::get('/posts', function () {
-    $posts = DB::table('posts')->get();
-    return $posts;
-//    return view('posts', compact('posts'));
+    $posts = App\Post::all();
+    return view('posts.index', compact('posts'));
+});
+
+Route::get('/posts/{id}', function ($id) {
+    $post = App\Post::find($id);
+    return view('posts.show', compact('post'));
 });
 
 
 Route::get('/api/posts', function () {
-    return DB::table('posts')->get();
+    return App\Post::all();
 });
 
 
