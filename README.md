@@ -2,5 +2,8 @@ John's Blog using Laravel
 --------------------------
 
 TODO:
-- Add tests
+- Add unit tests
+- Add seeders
+- Add functional tests
+- Setup CI
 
