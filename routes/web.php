@@ -11,28 +11,30 @@
 |
 */
 
+use App\Post;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
 Route::get('/posts', function () {
-    $posts = App\Post::all();
+    $posts = Post::all();
     return view('posts.index', compact('posts'));
 });
 
 Route::get('/posts/{id}', function ($id) {
-    $post = App\Post::find($id);
+    $post = Post::find($id);
     return view('posts.show', compact('post'));
 });
 
 
 Route::get('/api/posts', function () {
-    return App\Post::all();
+    return Post::all();
 });
 
 
 Route::get('/api/posts/{id}', function ($id) {
-    $post = DB::table('posts')->find($id);
-    dd($post);
+    $post = Post::find($id);
+    return $post;
 });
